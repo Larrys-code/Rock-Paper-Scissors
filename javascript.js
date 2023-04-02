@@ -1,10 +1,29 @@
 //getComputerSelection {Random rock paper or scissors}
+function getComputerSelection() {
     //let choice be a string
+    let choice = "";
     //let chooser be a random number between 1 and 3
+    let chooser = Math.floor(Math.random() * (3) + 1);
     //switch chooser === 1 : choice = rock
     //                   2 : choice = paper
     //                   3 : choice = scissors
+    switch (chooser) {
+        case 1 :
+            choice = "rock";
+            break;
+        case 2 :
+            choice = "paper";
+            break;
+        case 3 :
+            choice = "scissors";
+            break;
+        default :
+            choice = console.log("ComputerSelection is broken");
+            break;
+    }
     //return choice
+    return choice;
+}
 
 //playRound {Game of Rock Paper Scissors}
     //create variable playerSelection
