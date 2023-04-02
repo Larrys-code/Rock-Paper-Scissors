@@ -26,18 +26,49 @@ function getComputerSelection() {
 }
 
 //playRound {Game of Rock Paper Scissors}
+function playRound() {
     //create variable playerSelection
     //ask for user input for playerSelection
-    //getComputerSelection as computerSelection
-    //gameOutcome is winOrLose(playerSelection, computerSelection)
-    //switch gameOutcome === win : `You Win! ${playerSelection} beats ${computerSelection}!`
-    //                       lose : `You Lose! ${computerSelection} beats ${playerSelection}!`
-    //                       draw : `Your Drawed!`
+    let playerSelection = prompt("Type Rock, Paper or Scissors! ");
+    //convert playerSelection to lowercase
+    playerSelection = playerSelection.trim().toLowerCase();
+    //make an outcomeMessage
+    let outcomeMessage = "";
+    //make a gameOutcome
+    let gameOutcome = "";
+    //if playerSelection isn't legal, gameOutcome is retry. else:
+    if (!(playerSelection==="rock"||playerSelection==="paper"||playerSelection==="scissors")){
+        gameOutcome = "retry";
+    }else{
+        //getComputerSelection as computerSelection
+        let computerSelection = getComputerSelection();
+        //gameOutcome is winOrLose(playerSelection, computerSelection)
+        gameOutcome = winOrLose(playerSelection, computerSelection);
+        //switch gameOutcome === win : `You Win! ${playerSelection} beats ${computerSelection}!`
+        //                       lose : `You Lose! ${computerSelection} beats ${playerSelection}!`
+        //                       draw : `You Drawed!`
+        switch (gameOutcome){
+            case "win" :
+                outcomeMessage = `You Win! ${playerSelection} beats ${computerSelection}!`;
+                break;
+            case "lose" :
+                outcomeMessage = `You Lose! ${computerSelection} beats ${playerSelection}!`;
+                break;
+            case "draw" :
+                outcomeMessage = `You Drawed!`;
+                break;
+        }
+    
+        //alert outcomeMessage
+        alert(outcomeMessage);
+    }
     //return gameOutcome
+    return gameOutcome;
+}
 
 //winOrLose {Game of Rock Paper Scissors}
+function winOrLose(playerSelection, computerSelection) {
     //Accept variables playerSelection and computerSelection
-    //convert playerSelection to lowercase
     //if playerSelection === computerSelection, return draw
     //if playerSelection === paper
         //if computerSelection === scissors, return loss
@@ -48,3 +79,4 @@ function getComputerSelection() {
     //if playerSelection === scissors
         //if computerSelection === rock, return loss
         //else return win
+}
