@@ -91,11 +91,43 @@ function winOrLose(playerSelection, computerSelection) {
 }
 
 //firstToThree {Rock Paper Scissors match, first to three wins}
+function firstToThree() {
     //make playerScore and computerScore variables
+    let playerScore = 0;
+    let computerScore = 0;
     //make a result variable
-    //Keep playing whilst playerScore or computerScore are < 3
-        //if the result of playRound is win +1 to playerScore, report the score
-        //if the result is loss +1 to computerScore, report the score
-        //if the result is draw, report the score
+    let result = "";
+    let scoreMessage = "";
+    //Keep playing whilst playerScore and computerScore are < 3
+    while (playerScore < 3 && computerScore < 3) {
+        //result is the output of playRound
+        result = playRound();
+        switch (result) {
+            //if the result of playRound is win +1 to playerScore, report the score
+            case "win" :
+                playerScore = ++playerScore;
+                scoreMessage = `The Score is Player: ${playerScore} Computer: ${computerScore}`;
+                alert(scoreMessage);
+                break;
+            //if the result is loss +1 to computerScore, report the score
+            case "loss" :
+                computerScore = ++computerScore;
+                scoreMessage = `The Score is Player: ${playerScore} Computer: ${computerScore}`;
+                alert(scoreMessage);
+                break;
+            //if the result is draw, report the score
+            default :
+                scoreMessage = `The Score is Player: ${playerScore} Computer: ${computerScore}`;
+                alert(scoreMessage);
+        }
+    }
     //if playerScore === 3, report victory
+    if (playerScore === 3){
+        alert("YOU WON!");
+        return "win";
+    }else if (computerScore === 3){
     //if computerScore === 3, report defeat
+        alert("YOU LOST!");
+        return "loss";
+    }
+}
