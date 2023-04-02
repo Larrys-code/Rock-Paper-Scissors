@@ -51,7 +51,7 @@ function playRound() {
             case "win" :
                 outcomeMessage = `You Win! ${playerSelection} beats ${computerSelection}!`;
                 break;
-            case "lose" :
+            case "loss" :
                 outcomeMessage = `You Lose! ${computerSelection} beats ${playerSelection}!`;
                 break;
             case "draw" :
@@ -70,13 +70,22 @@ function playRound() {
 function winOrLose(playerSelection, computerSelection) {
     //Accept variables playerSelection and computerSelection
     //if playerSelection === computerSelection, return draw
-    //if playerSelection === paper
+    if (playerSelection === computerSelection) {
+        return "draw";
+    }else if (playerSelection === "paper") {
+        //if playerSelection === paper
         //if computerSelection === scissors, return loss
         //else return win
-    //if playerSelection === rock
+        return (computerSelection === "scissors" ? "loss" : "win");
+    }else if (playerSelection === "rock") {
+        //if playerSelection === rock
         //if computerSelection === paper, return loss
         //else return win
-    //if playerSelection === scissors
+        return (computerSelection === "paper" ? "loss" : "win");
+    }else if (playerSelection === "scissors") {
+        //if playerSelection === scissors
         //if computerSelection === rock, return loss
         //else return win
+        return (computerSelection === "rock" ? "loss" : "win");
+    }
 }
