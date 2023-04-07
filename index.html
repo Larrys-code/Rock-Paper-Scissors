@@ -5,10 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container"></div>
+
+    <div class="bounds">
+        <div class="scoreboard">
+            <div class="container">
+                <h2>player</h2>
+                <h2 id="playerScore">0</h2>
+            </div>
+            <div class="container">
+                <h2>computer</h2>
+                <h2 id="computerScore">0</h2>
+            </div>
+        </div>
+        <div class="display">
+            <svg id="playerChoice" width="250px" height="250px" viewBox="0 0 264 216" 
+            version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            xml:space="preserve" xmlns:serif="http://www.serif.com/" 
+            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" fill="#161618">
+                <path d="M19,99L19,83L67,83L67,67L181,67L181,83L197,83L197,149L181,149L181,181L165,181L165,197L149,197L149,213L67,213L67,197L19,197L19,181L3,181L3,99L19,99ZM69,101L53,101L53,179L69,179L69,195L99,195L99,179L115,179L115,165L99,165L99,149L67,149L67,131L99,131L99,115L115,115L115,99L133,99L133,115L149,115L149,131L163,131L163,85L69,85L69,101ZM147,181L117,181L117,195L147,195L147,181ZM179,133L165,133L165,147L179,147L179,133ZM115,133L101,133L101,147L115,147L115,133ZM131,117L117,117L117,131L131,131L131,117ZM163,149L117,149L117,163L163,163L163,149ZM35,101L21,101L21,179L35,179L35,101Z"/>
+            </svg>
+            <div class="messageContainer">
+                <h3 class="message">···</h3>
+                <h3>vs</h3>
+            </div>
+            <svg id="computerChoice" width="250px" height="250px" viewBox="0 0 264 216" 
+            version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            xml:space="preserve" xmlns:serif="http://www.serif.com/" 
+            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" fill="#161618" 
+            transform="matrix(-1,0,0,1,0,0)">
+                <path d="M19,99L19,83L67,83L67,67L181,67L181,83L197,83L197,149L181,149L181,181L165,181L165,197L149,197L149,213L67,213L67,197L19,197L19,181L3,181L3,99L19,99ZM69,101L53,101L53,179L69,179L69,195L99,195L99,179L115,179L115,165L99,165L99,149L67,149L67,131L99,131L99,115L115,115L115,99L133,99L133,115L149,115L149,131L163,131L163,85L69,85L69,101ZM147,181L117,181L117,195L147,195L147,181ZM179,133L165,133L165,147L179,147L179,133ZM115,133L101,133L101,147L115,147L115,133ZM131,117L117,117L117,131L131,131L131,117ZM163,149L117,149L117,163L163,163L163,149ZM35,101L21,101L21,179L35,179L35,101Z"/>
+            </svg>
+        </div> 
+        <div class="selectors">
+            <button class="rpsButton" id="rock">
+                <svg id="playerChoice" width="150px" height="150px" viewBox="0 65 264 150" 
+                version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                xml:space="preserve" xmlns:serif="http://www.serif.com/" 
+                style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" fill="#161618" 
+                transform="matrix(-1.8369701987210297e-16,-1,1,-1.8369701987210297e-16,0,0)">
+                    <path d="M19,99L19,83L67,83L67,67L181,67L181,83L197,83L197,149L181,149L181,181L165,181L165,197L149,197L149,213L67,213L67,197L19,197L19,181L3,181L3,99L19,99ZM69,101L53,101L53,179L69,179L69,195L99,195L99,179L115,179L115,165L99,165L99,149L67,149L67,131L99,131L99,115L115,115L115,99L133,99L133,115L149,115L149,131L163,131L163,85L69,85L69,101ZM147,181L117,181L117,195L147,195L147,181ZM179,133L165,133L165,147L179,147L179,133ZM115,133L101,133L101,147L115,147L115,133ZM131,117L117,117L117,131L131,131L131,117ZM163,149L117,149L117,163L163,163L163,149ZM35,101L21,101L21,179L35,179L35,101Z"/>
+                </svg>                
+            </button>
+            <button class="rpsButton" id="paper">
+                <svg id="playerChoice" width="150px" height="150px" viewBox="0 0 264 216" 
+                version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                xml:space="preserve" xmlns:serif="http://www.serif.com/" 
+                style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" fill="#161618" 
+                transform="matrix(-1.8369701987210297e-16,-1,1,-1.8369701987210297e-16,0,0)">
+                    <path d="M19,99L19,83L67,83L67,67L83,67L83,51L99,51L99,19L115,19L115,3L133,3L133,19L149,19L149,67L229,67L229,83L245,83L245,115L261,115L261,133L245,133L245,165L229,165L229,181L213,181L213,197L197,197L197,213L67,213L67,197L19,197L19,181L3,181L3,99L19,99ZM21,179L35,179L35,101L21,101L21,179ZM53,179L69,179L69,195L195,195L195,181L163,181L163,163L227,163L227,149L163,149L163,131L243,131L243,117L163,117L163,99L227,99L227,85L133,85L133,115L149,115L149,165L131,165L131,117L117,117L117,133L101,133L101,149L67,149L67,131L99,131L99,115L115,115L115,83L131,83L131,21L117,21L117,53L101,53L101,69L85,69L85,85L69,85L69,101L53,101L53,179Z"/>
+                </svg>          
+            </button>
+            <button class="rpsButton" id="scissors">
+                <svg id="playerChoice" width="150px" height="150px" viewBox="0 65 264 150" 
+                version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                xml:space="preserve" xmlns:serif="http://www.serif.com/" 
+                style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" fill="#161618" 
+                transform="matrix(-1.8369701987210297e-16,-1,1,-1.8369701987210297e-16,0,0)">
+                    <path d="M19,99L19,83L67,83L67,67L229,67L229,83L245,83L245,115L261,115L261,133L245,133L245,149L181,149L181,181L165,181L165,197L149,197L149,213L67,213L67,197L19,197L19,181L3,181L3,99L19,99ZM69,101L53,101L53,179L69,179L69,195L99,195L99,179L115,179L115,165L99,165L99,149L67,149L67,131L99,131L99,115L115,115L115,99L133,99L133,115L149,115L149,131L163,131L163,85L69,85L69,101ZM163,149L117,149L117,163L163,163L163,149ZM147,181L117,181L117,195L147,195L147,181ZM35,101L21,101L21,179L35,179L35,101ZM131,117L117,117L117,131L131,131L131,117ZM115,133L101,133L101,147L115,147L115,133ZM243,117L181,117L181,131L243,131L243,117ZM227,85L181,85L181,99L227,99L227,85Z"/>
+                </svg> 
+            </button>    
+    </div>
+    </div>
     <script src="javascript.js"></script>
 </body>
 </html>

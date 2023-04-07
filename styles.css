@@ -2,13 +2,81 @@
 
 * {
     box-sizing: border-box;
-};
+    font-family: 'DotGothic16', sans-serif;
+}
+
 
 body {
-    font-family: 'DotGothic16', sans-serif;
     height: 100vh;
     color: #161618;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+h2 {
+    color: #161618;
+    font-size: 60px;
+    flex: 0 0 auto;
+    padding: 0px;
+    margin: 0px;
+}
+
+h3 {
+    font-size: 50px;
+    padding: 0px;
+    margin: 0px 40px;
+}
+
+.bounds {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    width: 720px;    
+}
+
+.container {
+    text-align: center;
+}
+
+.messageContainer {
+    display: flex;
     flex-direction: column;
     align-items: center;
-};
+}
+
+.scoreboard {
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: -10px 0px 0px;   
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0px 0px;
+}
+
+.rpsButton {
+    cursor: pointer;
+    background-color: #fff;
+    border-style: none;
+    transition: transform .1s;
+}
+.rpsButton:hover {
+    transform: scale(1.1);
+}
